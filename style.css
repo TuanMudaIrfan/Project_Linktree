@@ -6,25 +6,27 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #e0e0e0, #ffffff);
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradien warna cerah */
+    color: #333;
 }
 
 header {
-    background-color: #4CAF50;
-    color: white;
+    background-color: rgba(255, 255, 255, 0.8); /* Latar belakang transparan */
+    color: #4CAF50;
     padding: 40px 20px;
     text-align: center;
     position: relative;
     overflow: hidden;
+    border-bottom: 5px solid #4CAF50; /* Garis bawah header */
 }
 
 header h1 {
-    font-size: 2.5em;
+    font-size: 3em; /* Ukuran font lebih besar */
     margin: 0;
 }
 
 header p {
-    font-size: 1.2em;
+    font-size: 1.5em; /* Ukuran font deskripsi lebih besar */
 }
 
 nav ul {
@@ -38,13 +40,14 @@ nav ul li {
 }
 
 nav a {
-    color: white;
+    color: #4CAF50;
     text-decoration: none;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Animasi saat hover */
 }
 
 nav a:hover {
     color: #FFD700; /* Warna kuning saat hover */
+    transform: scale(1.1); /* Membesar saat hover */
 }
 
 main {
@@ -56,7 +59,7 @@ section {
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 2.5em; /* Ukuran font lebih besar */
     margin-bottom: 10px;
     position: relative; /* Untuk animasi underline */
 }
@@ -75,31 +78,24 @@ h2:hover::after {
 }
 
 .project {
-    background-color: #f4f4f4;
+    background-color: rgba(255, 255, 255, 0.9); /* Latar belakang transparan untuk proyek */
     padding: 20px;
     margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Sudut membulat */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk efek hover */
 }
 
 .project:hover {
-    transform: translateY(-5px); /* Mengangkat proyek saat hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
+    transform: translateY(-10px); /* Mengangkat proyek saat hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* Animasi masuk untuk setiap bagian */
 section {
    opacity: 0; /* Mulai dengan transparan */
    transform: translateY(20px); /* Mulai sedikit di bawah */
-   animation-duration: 1s; /* Durasi animasi */
+   animation-duration: .8s; /* Durasi animasi */
    animation-fill-mode: forwards; /* Mempertahankan status akhir animasi */
 }
 
@@ -117,4 +113,26 @@ section {
        opacity: 1; 
        transform: translateY(0);
    }
+}
+
+/* Animasi bergerak latar belakang */
+@keyframes backgroundAnimation {
+   from { background-position: left; }
+   to { background-position: right; }
+}
+
+/* Menerapkan animasi latar belakang ke body */
+body {
+   background-size: 200% auto; 
+   animation-name: backgroundAnimation;
+   animation-duration: 10s; 
+   animation-iteration-count: infinite; 
+   animation-timing-function: linear; 
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(51,51,51,0.8);
+    color: white;
 }
