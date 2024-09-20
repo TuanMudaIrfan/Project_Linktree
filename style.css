@@ -6,133 +6,82 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradien warna cerah */
-    color: #333;
+    background-color: #f9f9f9;
 }
 
 header {
-    background-color: rgba(255, 255, 255, 0.8); /* Latar belakang transparan */
-    color: #4CAF50;
-    padding: 40px 20px;
+    background-color: #ff5722;
+    color: white;
+    padding: 20px;
     text-align: center;
-    position: relative;
-    overflow: hidden;
-    border-bottom: 5px solid #4CAF50; /* Garis bawah header */
 }
 
 header h1 {
-    font-size: 3em; /* Ukuran font lebih besar */
     margin: 0;
 }
 
-header p {
-    font-size: 1.5em; /* Ukuran font deskripsi lebih besar */
-}
-
-nav ul {
+header nav ul {
     list-style-type: none;
     padding: 0;
 }
 
-nav ul li {
+header nav ul li {
     display: inline;
     margin-right: 20px;
 }
 
-nav a {
-    color: #4CAF50;
+header nav a {
+    color: white;
     text-decoration: none;
-    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Animasi saat hover */
-}
-
-nav a:hover {
-    color: #FFD700; /* Warna kuning saat hover */
-    transform: scale(1.1); /* Membesar saat hover */
-}
-
-main {
-    padding: 20px;
 }
 
 section {
-    margin-bottom: 60px;
-}
-
-h2 {
-    font-size: 2.5em; /* Ukuran font lebih besar */
-    margin-bottom: 10px;
-    position: relative; /* Untuk animasi underline */
-}
-
-h2::after {
-    content: '';
-    display: block;
-    width: 50%;
-    height: 4px;
-    background-color: #4CAF50; /* Warna garis bawah */
-    transition: width 0.4s ease-in-out, background-color 0.4s ease-in-out; 
-}
-
-h2:hover::after {
-    width: 100%; /* Garis bawah melebar saat hover */
-}
-
-.project {
-    background-color: rgba(255, 255, 255, 0.9); /* Latar belakang transparan untuk proyek */
     padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px; /* Sudut membulat */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk efek hover */
 }
 
-.project:hover {
-    transform: translateY(-10px); /* Mengangkat proyek saat hover */
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+#products {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-/* Animasi masuk untuk setiap bagian */
-section {
-   opacity: 0; /* Mulai dengan transparan */
-   transform: translateY(20px); /* Mulai sedikit di bawah */
-   animation-duration: .8s; /* Durasi animasi */
-   animation-fill-mode: forwards; /* Mempertahankan status akhir animasi */
+.product {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 10px;
+    padding: 15px;
+    width: calc(33% - 40px);
 }
 
-/* Menambahkan animasi untuk setiap section */
-#about { animation-name: fadeInUp; }
-#projects { animation-name: fadeInUp; animation-delay: .2s; }
-#contact { animation-name: fadeInUp; animation-delay: .4s; }
-
-@keyframes fadeInUp {
-   from {
-       opacity: 0; 
-       transform: translateY(20px);
-   }
-   to {
-       opacity: 1; 
-       transform: translateY(0);
-   }
+.product h3 {
+    color: #333;
 }
 
-/* Animasi bergerak latar belakang */
-@keyframes backgroundAnimation {
-   from { background-position: left; }
-   to { background-position: right; }
+.product p.price {
+    font-weight: bold;
+    color: #ff5722; /* Warna harga */
 }
 
-/* Menerapkan animasi latar belakang ke body */
-body {
-   background-size: 200% auto; 
-   animation-name: backgroundAnimation;
-   animation-duration: 10s; 
-   animation-iteration-count: infinite; 
-   animation-timing-function: linear; 
+.add-to-cart {
+    background-color: #4CAF50; /* Warna tombol */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: #45a049; /* Warna tombol saat hover */
+}
+
+#cart {
+    margin-top: 20px;
 }
 
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(51,51,51,0.8);
+    background-color: #333;
     color: white;
+    text-align: center;
+    padding: 10px 0;
 }
